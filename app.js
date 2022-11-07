@@ -22,12 +22,18 @@
         escreva 'Tente de novo' (Com a exceção do resultado ser de números iguais)
 */
 
-let conjunto = [0,0,0]
+let conjunto = [0, 0, 0]
 
-for (let index = 0; index < conjunto.length; index++) {
+const porta = () => {
+    for (let index = 0; index < conjunto.length; index++) {
+        let sorteio = Math.round(Math.random() * 2 + 1)
+        conjunto[index] = sorteio
+    }
 
-    let sorteio = Math.round(Math.random()*2+1)
-    conjunto[index] = sorteio
+    if (conjunto[0] == conjunto[1] && conjunto[0] == conjunto[2]) {
+        console.log(`type: porta\nchannel: 1\nstatus: ABERTA`)
+    } else {
+        console.log(`type: porta\nchannel: 1\nstatus: FECHADA - tente de novo!`)
+    }
+    return conjunto
 }
-
-console.log(conjunto);
