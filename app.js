@@ -21,3 +21,13 @@
 -- Se os valores forem diferentes: 
         escreva 'Tente de novo' (Com a exceção do resultado ser de números iguais)
 */
+
+let conjunto = [0,0,0]
+
+for (let index = 0; index < conjunto.length; index++) {
+
+    let sorteio = Math.round(Math.random()*2+1)
+    conjunto[index] = sorteio
+}
+
+console.log(conjunto);
