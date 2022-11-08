@@ -1,16 +1,5 @@
-/*
-# Fase 3
-
-[x] crie uma variável de controle para acumular a quantidade de vezes que os números se repetem
-[x] crie uma variável que armazene o valor do último sorteio
-- compare a valor do último sorteio com o valor do sorteio atual
--- Se os valores forem iguais: escreva 'Porta (x)' : aberta
--- Se os valores forem diferentes: 
-        escreva 'Tente de novo' (Com a exceção do resultado ser de números iguais)
-*/
-
 let controleDeFluxo = 1
-let ultimaPorta = [9,9,9]
+let ultimaPorta = [9, 9, 9]
 
 const porta = () => {
     let conjunto = [0, 0, 0]
@@ -21,7 +10,7 @@ const porta = () => {
     return conjunto
 }
 
-const verificao = (tentativas) => {
+const abrir_porta = (tentativas) => {
     for (let index = 0; index < tentativas; index++) {
         let novaPorta = porta()
         let c = 0
@@ -39,10 +28,10 @@ const verificao = (tentativas) => {
             console.log(`PORTAS: ${c}\nSTATUS: ABERTA!`)
             return
         }
-        if(c < 3) {
-                    console.log(`PORTAS: ${c}\nSTATUS:FECHADA\nTENTE NOVAMENTE`);
-                }
-        
+        if (c < 3) {
+            console.log(`PORTAS: ${c}\nSTATUS:FECHADA\nTENTE NOVAMENTE`)
+        }
+
         ultimaPorta = novaPorta
         controleDeFluxo++
     }
